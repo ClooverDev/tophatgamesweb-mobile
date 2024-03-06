@@ -8,7 +8,7 @@ function isMobile() {
 
 if (isMobile()) {
 	console.log("user is on mobile!");
-	if (window.location.hostname  == "www.tophatgames.net") {
+	if (window.location.hostname  == "www.tophatgames.net" || window.location.hostname  == "tophatgames.net") {
 		window.location.replace("https://m.tophatgames.net");
 	}
 } else {

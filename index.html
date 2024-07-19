@@ -31,7 +31,6 @@
 			* {
 				color: white;
 				font-family: 'Pixeloid Sans', sans-serif;
-
 			}
 			
 			#mono {
@@ -264,7 +263,7 @@
 			}
 			
 			#flash {
-				position: absolute;
+				position: fixed;
 				transform: translate(-9px, -72px);
 				margin: auto;
 				background-color: white;
@@ -297,7 +296,7 @@
 				
 			<div id="flash" class="flashing_default"></div>
 			
-			<div class="main" style="position:relative;">
+			<div class="main" style="position:relative">
 				<div class="start">
 					<a href="#" onclick="logoInteraction()"><img id="start_logo" src="resources/images/logos/normal.png"></a>
 					<img class="oneup_default" id="id_oneup" style="width:3rem;" src="resources/images/coin.png">
@@ -315,8 +314,8 @@
 					<div class="bar" style="border-bottom: solid 5px #00e66f;"></div>
 					<p style="text-align:center; font-size:100%;">
 					
-					<center>
-						<div class="next_game" style="transform:translateY(-30px);">
+					<center style="transform:translateY(80px)">
+						<div class="next_game" id="new_game_div" style="transform:translateY(-30px);">
 							<p id="next_game_title" style="color:#00e66f; font-size:1.5em; transform:translateY(25px); filter:drop-shadow(0px 0px 5px black);"> NEXT GAME </p>
 							
 							<div class="next_game_logo">
@@ -390,7 +389,7 @@
 		
 		<footer>
 			<center>
-				<div class="footer" style="transform:translate(-13px, -80px);">
+				<div class="footer" style="transform:translate(-13px, -80px); position: fixed;">
 					<a href="https://twitter.com/tophatgamesofc" style="text-decoration: none; color:cyan">Twitter</a>    <a href="https://discord.com/invite/7YhtNaN95R" style=" text-decoration: none; color:pink">Discord Server</a>    <a  href="https://www.youtube.com/@tophatgamesofc" style=" text-decoration: none; color:red">YouTube</a>
 					<br> ©  TopHat Games, 2021-2024
 				</div>
@@ -412,14 +411,15 @@
 
 
 		// BAR \\
-		const  bar_amount = 100;
+		const  bar_amount = 67;
 
 		const bar = "progress_bar";
 		const percentage = "progress_bar_perc"
 	  
 		function updateBar() {
-			document.getElementById(bar).style.width = bar_amount+"%";
-			document.getElementById(percentage).innerHTML = bar_amount+"%";
+			document.getElementById("new_game_div").remove()
+			//document.getElementById(bar).style.width = bar_amount+"%";
+			//document.getElementById(percentage).innerHTML = bar_amount+"%";
 		}
 		
 		updateBar()
